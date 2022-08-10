@@ -1,6 +1,6 @@
 import argparse
 from Report import Report
-
+# 打卡
 report_data = [
     ("juzhudi", "中校区"),  # 居住地
     ("dorm_building", "1"),  # 宿舍楼
@@ -20,14 +20,16 @@ report_data = [
     ("jiji_mobile", "13688387008"),  # 紧急联系人电话
     ("other_detail", ""),  # 其他情况说明
 ]
+# 跨校区
 cross_campus_data = [
     ("return_college[]", "东校区"),  # 往返校区
     ("return_college[]", "西校区"),  # 往返校区
     ("return_college[]", "南校区"),  # 往返校区
     ("return_college[]", "北校区"),  # 往返校区
     ("return_college[]", "中校区"),  # 往返校区
-    ("reason", "上课"),  # 原因
+    ("reason", "学习"),  # 原因
 ]
+# 出校
 out_school_data = [
     ("return_college[]", "蜀山区"),  # 目的地
     ("return_college[]", "包河区"),  # 目的地
@@ -46,7 +48,7 @@ if __name__ == "__main__":
     while count != 0:
         if (autorepoter.report(report_data)
                 & autorepoter.upload_code()
-                & autorepoter.cross_campus(cross_campus_data)):
+#                 & autorepoter.cross_campus(cross_campus_data)):
 #                 & autorepoter.out_school(out_school_data)):
             print("ENJOY YOUR FREEDOM! ")
             break
